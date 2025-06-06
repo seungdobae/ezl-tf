@@ -5,12 +5,12 @@ terraform {
       version = "~> 5.0"
     }
   }
-  
+
   backend "local" {}
 }
 
 provider "aws" {
-  region = "ap-northeast-2"  # 서울 리전
+  region = "ap-northeast-2" # 서울 리전
 }
 
 # VPC
@@ -125,9 +125,9 @@ output "instance_public_ip" {
 }
 
 resource "aws_instance" "simple_ec2" {
-  ami           = "ami-0c9c942bd7bf113a2"  # Amazon Linux 2023 AMI (서울 리전)
+  ami           = "ami-0c9c942bd7bf113a2" # Amazon Linux 2023 AMI (서울 리전)
   instance_type = "t2.micro"
-  
+
   tags = {
     Name = "Simple-EC2-Instance"
   }
